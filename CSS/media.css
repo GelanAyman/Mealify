@@ -1,0 +1,196 @@
+/* ^ >= 1400 */
+@media screen and (max-width: 1400px) {
+    .container {
+        width: 90%;
+    }
+}
+
+/* ? >= 1200 */
+@media screen and (max-width: 1200px) {
+    .container {
+        width: 90%;
+    }
+
+    .nav {
+        background-color: transparent;
+        box-shadow: none;
+    }
+    .nav .menu ul {
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 400px;
+        height: 100vh;
+        background-color: #fff;
+        border-left: 2px solid #f1f1f1;
+        padding-left: 12px;
+    }
+    .nav .close {
+        display: block;
+        cursor: pointer;
+        padding: 20px;
+    }
+
+    .nav .menu ul li a:hover::before{
+        width: 0%;
+    }
+    .nav .bars {
+        opacity: 100%;
+        padding-left: 12px;
+    }
+
+    .chefs .cards .card .card-text p {
+        font-size: 14px;
+    }
+
+    .footer .footer-content{
+        flex-wrap: wrap;
+    }
+    .footer .footer-content .about, 
+    .footer .footer-content .touch {
+        width: calc((100% - 20px) / 2);
+    }
+    .footer .footer-content .subscribe {
+        order: 5;
+        width: calc(100% - 20px);
+    }
+    .footer .footer-content .about ul {
+        gap: 60px;
+    }
+}
+
+/* * >= 1000 */
+@media screen and (max-width:1000px) {
+    .chefs .cards .card .card-image::before {
+        bottom: -4px;
+    }
+}
+
+/* ! >= 800 */
+@media screen and (max-width:800px) {
+    .hero {
+        height: auto;
+    }
+    .hero .container {
+        flex-wrap: wrap;
+    }
+    .hero .hero-image {
+        order: -1;
+    }
+    .hero .hero-content, 
+    .hero .hero-image {
+        width: 100%;
+    }
+    .hero .hero-buttons {
+        justify-content: center;
+    }
+
+    .chefs .cards {
+        flex-wrap: wrap;
+    }
+    .chefs .cards .card {
+        width: calc((100% - 32px) / 2);
+    }
+
+    .gallery-grid {  
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+        gap: 15px 15px;
+        grid-auto-flow: row;
+        grid-template-areas:
+            "pizza beef"
+            "pizza beef"
+            "burger beef"
+            "burger beef"
+            "slices beef"
+            "slices crispy"
+            "slices crispy"
+            "slices kofta"
+            "slices kofta"
+            "bashamil kofta"
+            "bashamil ."
+            "bashamil .";
+    }
+    .pizza { grid-area: pizza; }
+    .burger { grid-area: burger; }
+    .slices { grid-area: slices; }
+    .bashamil { grid-area: bashamil; }
+    .beef { grid-area: beef; }
+    .crispy { grid-area: crispy; }
+    .kofta { grid-area: kofta; }
+}
+
+/* ~ >* 600 */
+@media screen and (max-width:600px) {
+    .chefs .cards .card {
+        width: calc(100% - 32px);
+    }
+
+    .contact .info .box {
+        width: calc(100% - 16px);
+    }
+    .contact .form form .form-input {
+    flex-wrap: wrap;
+    }
+    .contact .form form .form-input input {
+        width: calc(100% - 16px);
+    }
+
+    .gallery-grid 
+    {  display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+        gap: 15px 15px;
+        grid-auto-flow: row;
+        grid-template-areas:
+            "pizza"
+            "pizza"
+            "burger"
+            "burger"
+            "slices"
+            "slices"
+            "slices"
+            "slices"
+            "bashamil"
+            "bashamil"
+            "bashamil"
+            "beef"
+            "beef"
+            "beef"
+            "beef"
+            "beef"
+            "crispy"
+            "crispy"
+            "kofta"
+            "kofta";
+    }
+.pizza { grid-area: pizza; }
+.burger { grid-area: burger; }
+.slices { grid-area: slices; }
+.bashamil { grid-area: bashamil; }
+.beef { grid-area: beef; }
+.crispy { grid-area: crispy; }
+.kofta { grid-area: kofta; }
+
+    .footer .footer-content .about, 
+    .footer .footer-content .touch,
+    .footer .footer-content .subscribe {
+        width: calc(100% - 20px);
+    }
+    .footer .footer-content .touch {
+        order: 5;
+    }
+    .footer .footer-content .subscribe .sub-input button {
+        padding: 10px;
+        font-size: 14px;
+        width: fit-content;
+    }
+    
+.footer .footer-content .subscribe .sub-input input {
+    padding: 8px;
+}
+
+}
