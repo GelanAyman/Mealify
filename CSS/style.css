@@ -1,11 +1,42 @@
+:root {
+    --main-color: #CE1212;
+    --text-main-color: #000;
+    --text-secondary-color: #4f4f5a;
+    --selection-bg: #D85454;
+    --selection-color: #fff;
+    --main-bg-color: #eee;
+    --secondary-bg-color: #fff;
+    --hover: #E61414;
+    --text-hover: #222222;
+    --video-bg: #fff;
+    --chefs-card-bg: #fff;
+    --video: #000;
+    --chefs-bg: url("../images/team-shape.svg");
+}
+body:has(#switch:checked) {
+    --main-color: #C17E1F;
+    --text-main-color: #fff;
+    --text-secondary-color: #9f9f9f;
+    --selection-bg: #926321;
+    --selection-color: #181717;
+    --main-bg-color: #252525;
+    --secondary-bg-color: #202020;
+    --hover: #C07D1F;
+    --text-hover: #fff;
+    --video-bg: #000;
+    --chefs-card-bg: #161616;
+    --video: #fff;
+    --chefs-bg: url("../images/team-shape-dark.svg");
+}
+
 *,
 *::after,
 *::before {
     box-sizing: border-box;
 }
 *::selection {
-    background-color: #D85454;
-    color: #fff;
+    background-color: var(--selection-bg);
+    color: var(--selection-color);
 }
 .layer h3::selection,
 .layer p::selection,
@@ -15,8 +46,8 @@
 .footer div::selection,
 .footer a::selection,
 .footer li::selection {
-    background-color: #CE1212 !important;
-    color: #fff;
+    background-color: var(--main-color) !important;
+    color: var(--selection-color);
 }
 body {
     margin: 0;
@@ -55,15 +86,16 @@ h1, h2, h4, h5, h6 {
     font-size: 48px;
     font-weight: 400;
     margin-top: 0;
+    color: var(--text-main-color);
 }
 .title h2 span {
-    color: #CE1212;
+    color: var(--main-color);
 }
 
 
 /* ?======> nav */
 .nav {
-    background-color: #fff;
+    background-color: var(--secondary-bg-color);
     padding: 24px 0;
     box-shadow: 0px 0px 10px 0px #0000001b;
     position: fixed;
@@ -86,7 +118,7 @@ h1, h2, h4, h5, h6 {
 .nav .logo h1::after {
     content: ".";
     position: absolute;
-    color: #CE1212;
+    color: var(--main-color);
     font-size: 100px;
     top: -70px;
     right: -20px;
@@ -99,20 +131,6 @@ h1, h2, h4, h5, h6 {
     margin: 0;
     padding: 0;
 }
-/*
-.nav .menu ul {
-    margin: 0;
-    padding: 0;
-}
-.nav .menu ul li {
-    float: left;
-    padding-left: 24px;
-}
-.nav .menu ul li a {
-    position: relative;
-    color: #7f7f90;
-    font-weight: 600;
-} */
 .nav .menu ul li a {
     position: relative;
 }
@@ -121,7 +139,7 @@ h1, h2, h4, h5, h6 {
     content: "";
     width: 0px;
     height: 2px;
-    background-color: #CE1212;
+    background-color: var(--main-color);
     left: 50%;
     transform: translateX(-50%);
     bottom: -5px;
@@ -131,7 +149,7 @@ h1, h2, h4, h5, h6 {
     transition: width 0.5s;
 }
 .nav .menu ul li a:hover {
-    color: #222222;
+    color: var(--text-hover)
 }
 
 .nav .moon i {
@@ -147,9 +165,19 @@ h1, h2, h4, h5, h6 {
     width: fit-content;
     align-items: flex-end;
 }
+.nav {
+    color: var(--text-main-color);
+}
+.nav input {
+    display: none;
+}
+.nav .moon i:hover {
+    cursor: pointer;
+    color: var(--main-color);
+}
 /* !===========> hero */
 .hero {
-    background-color: #EEEEEE;
+    background-color: var(--main-bg-color);
     height: 100vh;
     display: flex;
     justify-content: center;
@@ -165,16 +193,17 @@ h1, h2, h4, h5, h6 {
 }
 .hero .container h1 {
     font-size: 64px;
+    color: var(--text-main-color);
 }
 .hero .hero-content ,
 .hero .hero-image {
     width: 40%;
 }
-.hero .title .hero-content p {
-    color: #4f4f5a;
+.hero p {
     line-height: 1.8;
     margin-block: 20px;
     font-size: 16px;
+    color: var(--text-secondary-color);
 }
 .hero .hero-buttons {
     display: flex;
@@ -182,7 +211,7 @@ h1, h2, h4, h5, h6 {
     gap: 32px;
 }
 .hero .hero-buttons .book {
-    background-color: #CE1212;
+    background-color: var(--main-color);
     color: #fff;
     padding: 12px 24px;
     border-radius: 0px 24px 24px 24px;
@@ -199,7 +228,7 @@ h1, h2, h4, h5, h6 {
 
 .hero .hero-buttons .video .icon {
     position: relative;
-    background-image: linear-gradient(to right, #CE1212 0% 50%, transparent 50% 100%);
+    background-image: linear-gradient(to right, var(--main-color) 0% 50%, transparent 50% 100%);
     width: 56px;
     height: 56px;
     border-radius: 50%;
@@ -212,26 +241,56 @@ h1, h2, h4, h5, h6 {
     transform: translate(-50%, -50%);
     width: 40px;
     height: 40px;
-    background-color: #fff;
+    background-color: var(--video-bg);
     border-radius: 50%;
+}
+.hero .video p {
+    color: var(--text-main-color);
 }
 .hero .hero-buttons .video .icon i {
     position: absolute;
     top: 20px;
     left: 18px;
+    color: var(--video);
 }
 .hero .hero-buttons .video:hover i,
 .hero .hero-buttons .video:hover p {
     cursor: pointer;
-    color: #CE1212;
+    color: var(--main-color);
 }
 .hero .hero-buttons .book:hover {
-    background-color: #E61414;
+    background-color: var(--main-color);
 }
 
+
+
+.hero .hero-image img:hover {
+    animation: shake 1s infinite;
+}
+@keyframes shake {
+    0% {
+        transform: translate(1px, 1px), rotate(0deg);
+    }
+
+    25% {
+        transform: translate(-1px, -2px) rotate(-1deg);
+    }
+
+    50% {
+        transform: translate(-3px, 0px) rotate(1deg);
+    }
+
+    75% {
+        transform: translate(3px, 2px) rotate(0deg);
+    }
+
+    100% {
+        transform: translate(3px, 1px) rotate(-1deg);
+    }
+}
 /* ^===========> chefs */
 .chefs {
-    background-color: #fff;
+    background-color: var(--secondary-bg-color);
     padding: 100px 0;
     text-align: center;
 }
@@ -279,11 +338,14 @@ h1, h2, h4, h5, h6 {
     color: #47464C;
 }
 .chefs .cards .card .card-text {
+    position: relative;
     padding: 12px 24px 24px 24px;
     font-family: "Inter", sans-serif;
+    background-color: var(--chefs-card-bg);
 }
 .chefs h3 {
     margin-top: 0;
+    color: var(--text-main-color);
 }
 .chefs .cards .card .card-text span {
     color: #7f7f90;
@@ -292,13 +354,10 @@ h1, h2, h4, h5, h6 {
     color: #7f7f90;
     font-size: 16px;
 }
-.chefs .cards .card .card-text {
-    position: relative;
-}
 .chefs .cards .card .card-image::before {
     content: "";
     position: absolute;
-    background-image: url("../images/team-shape.svg");
+    background-image: var(--chefs-bg);
     width: 100%;
     height: 60px;
     left: 0;
@@ -307,7 +366,7 @@ h1, h2, h4, h5, h6 {
 
 /* &===========> gallery */
 .gallery {
-    background-color: #EEEEEE;
+    background-color: var(--main-bg-color);
     padding: 100px 0;
 }
 .gallery-grid {  
@@ -395,7 +454,7 @@ h1, h2, h4, h5, h6 {
 
 /* *===========> contact */
 .contact {
-    background-color: #fff;
+    background-color: var(--secondary-bg-color);
     padding: 100px 0;
 }
 
@@ -417,7 +476,7 @@ h1, h2, h4, h5, h6 {
     width: calc((100% - 16px) / 2);;
     display: flex;
     align-items: center;
-    background-color: #F5F5F5;
+    background-color: var(--main-bg-color);
     gap: 16px;
     padding: 24px;
 }
@@ -425,15 +484,15 @@ h1, h2, h4, h5, h6 {
     width: 40px;
     height: 40px;
     border-radius: 50%;
-    background-color: #CE1212;
+    background-color: var(--main-color);
     display: flex;
     align-items: center;
-    color: #fff;
+    color: var(--video-bg);
     font-size: 20px;
     padding-left: 7px;
 }
 .contact .info .box h3 {
-    color: #7d7d7d;
+    color: var(--text-secondary-color);
     font-size: 20px;
     font-weight: 700;
     margin-bottom: 8px;
@@ -441,6 +500,9 @@ h1, h2, h4, h5, h6 {
 }
 .contact .info .box span {
     font-weight: 700;
+}
+.contact .info .box p {
+    color: var(--text-main-color);
 }
 .contact .form {
     margin-top: 20px;
@@ -471,14 +533,14 @@ h1, h2, h4, h5, h6 {
     width: fit-content;
     padding: 12px 40px;
     margin: 24px auto 0;
-    background-color: #CE1212;
+    background-color: var(--main-color);
     color: #fff;
     border-radius: 20px;
-    border: 2px solid #CE1212;
+    border: 2px solid var(--main-color);
     font-size: 16px;
 }
 .contact .form form button:hover {
-    background-color: #E61414;
+    background-color: var(--hover);
     cursor: pointer;
 }
 
@@ -515,7 +577,7 @@ h1, h2, h4, h5, h6 {
 .footer .footer-content .logo .mealify::after {
     content: ".";
     position: absolute;
-    color: #CE1212;
+    color: var(--main-color);
     font-size: 48px;
     top: -12px;
     right: -12px;
@@ -549,7 +611,7 @@ h1, h2, h4, h5, h6 {
     width: calc(1/5 * (100% - 8px));
     padding: 12px;
     color: #fff;
-    background-color: #CE1212;
+    background-color: var(--main-color);
     font-size: 16px;
 }
 .footer .footer-content .subscribe ul {
@@ -574,5 +636,5 @@ h1, h2, h4, h5, h6 {
 }
 .footer .footer-content .touch li i {
     font-size: 24px;
-    color: #CE1212;
+    color: var(--main-color);
 }
